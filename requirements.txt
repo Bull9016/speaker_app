@@ -1,0 +1,12 @@
+streamlit>=1.30.0
+streamlit-option-menu>=0.3.2
+pandas
+pillow
+qrcode
+python-dotenv
+SQLAlchemy
+openai
+sendgrid
+streamlit-lottie
+requests
+cryptography
