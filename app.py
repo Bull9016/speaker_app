@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime
-from models import (SessionLocal, Speaker, Session, User, QRCode, 
+from models import (SessionLocal, Speaker, Session, User, QRCode,
                    Document, ChangeRequest)
 from utils import (generate_password_hash, verify_password, generate_qr_code,
                   create_certificate, load_lottie_url, get_base64_download_link,
@@ -10,6 +10,12 @@ from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
 import json
 import os
+
+# Database initialization
+DB_PATH = os.path.join(os.path.dirname(__file__), "speaker_app.db")
+if not os.path.exists(DB_PATH):
+    from init_db import init_db
+    init_db()
 
 # Page config
 st.set_page_config(
