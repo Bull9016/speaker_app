@@ -34,3 +34,40 @@ Supabase setup
 3. (Optional) To run server-side seeds or admin tasks, add `SUPABASE_SERVICE_ROLE_KEY` to `.env.local` (this is secret — do NOT commit it).
 
 If you don't have Supabase keys handy, the app will run in mock mode (localStorage) for auth and speaker registration. Use the demo seed on `/auth` to create a demo account.
+
+## Streamlit App (Speaker Management)
+
+The Streamlit app provides a full speaker management system with user registration, session submission, event management, and more.
+
+### Setup
+
+1. Install Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Initialize the database:
+
+```bash
+python init_db.py
+```
+
+3. Run the app:
+
+```bash
+streamlit run app.py
+```
+
+### Demo Credentials
+
+For testing the custom login:
+
+- **Event Manager**: Email: manager@test.com, Password: test123
+- **Speaker**: Email: speaker@test.com, Password: test123
+
+### Deployment
+
+The app uses SQLite by default. For production, set the `DATABASE_URL` environment variable to a PostgreSQL connection string to use Postgres instead.
+
+The app binds to `0.0.0.0` and uses the `PORT` environment variable for the server port (defaults to 8501).

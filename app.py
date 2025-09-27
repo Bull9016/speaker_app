@@ -976,9 +976,6 @@ def main():
 
 if __name__ == "__main__":
     try:
-        import os
-        os.environ['STREAMLIT_SERVER_PORT'] = '8501'  # Use default port for health check
-        os.environ['STREAMLIT_SERVER_ADDRESS'] = 'localhost'  # Use localhost
         main()
     except Exception as e:
         st.error(f"Startup Error: {str(e)}")
