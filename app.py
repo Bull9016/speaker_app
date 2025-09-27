@@ -11,11 +11,12 @@ from streamlit_lottie import st_lottie
 import json
 import os
 
-# Database initialization
-DB_PATH = os.path.join(os.path.dirname(__file__), "speaker_app.db")
-if not os.path.exists(DB_PATH):
-    from init_db import init_db
-    init_db()
+# Database initialization - always ensure tables and data
+from models import Base, engine
+Base.metadata.create_all(bind=engine)  # Create tables if they don't exist
+
+from init_db import init_db
+init_db()  # Seed data idempotently
 
 # Page config
 st.set_page_config(
