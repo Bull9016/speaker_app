@@ -10,3 +10,4 @@ sendgrid
 streamlit-lottie
 requests
 cryptographygoogle-generativeai 
+google-generativeai 
