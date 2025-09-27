@@ -9,5 +9,5 @@ openai
 sendgrid
 streamlit-lottie
 requests
-cryptographygoogle-generativeai 
+cryptography
 google-generativeai 
