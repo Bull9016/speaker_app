@@ -9,6 +9,7 @@ from utils import (generate_password_hash, verify_password, generate_qr_code,
 from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
 import json
+import os
 
 # Page config
 st.set_page_config(
@@ -976,7 +977,7 @@ def main():
 if __name__ == "__main__":
     try:
         import os
-        os.environ['STREAMLIT_SERVER_PORT'] = '8503'  # Try a different port
+        os.environ['STREAMLIT_SERVER_PORT'] = '8501'  # Use default port for health check
         os.environ['STREAMLIT_SERVER_ADDRESS'] = 'localhost'  # Use localhost
         main()
     except Exception as e:
